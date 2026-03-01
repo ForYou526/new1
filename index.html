@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Courier New', monospace;
+    background:linear-gradient(to bottom,#ffb6d5,#ffcce6);
+    text-align:center;
+    color:#ff1493;
+}
+
+/* HEADER */
+h1{
+    margin-top:40px;
+    font-size:26px;
+}
+
+/* ENVELOPE */
+.envelope{
+    width:250px;
+    height:150px;
+    background:#ff8dc7;
+    margin:80px auto;
+    position:relative;
+    border-radius:10px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.flap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff69b4;
+    top:0;
+    left:0;
+    clip-path:polygon(0 0,100% 0,50% 60%);
+    transition:0.8s;
+    transform-origin:top;
+}
+
+/* PAPER */
+.paper{
+    width:300px;
+    background:white;
+    padding:20px;
+    margin:30px auto;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    display:none;
+}
+
+.gallery{
+    margin-top:15px;
+}
+
+.gallery img{
+    width:100px;
+    height:130px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:5px;
+    box-shadow:0 0 10px pink;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#ff69b4;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* CINEMATIC */
+.cinematic{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    color:white;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    opacity:0;
+    pointer-events:none;
+    transition:2s;
+    z-index:100;
+}
+
+.cinematic.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.footer{
+    margin-top:40px;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💗 For Someone Special 💗</h1>
+
+<div class="envelope" onclick="openLetter()">
+    <div class="flap" id="flap"></div>
+</div>
+
+<div class="paper" id="letter">
+    <h2>I'm Sorry 💌</h2>
+    <p>
+    I know I made mistakes.<br><br>
+    I never meant to hurt you.<br>
+    You mean everything to me.<br><br>
+    Please forgive me... 💖
+    </p>
+
+    <div class="gallery">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+    </div>
+
+    <br>
+    <button onclick="cinematic()">Finish 💗</button>
+</div>
+
+<div class="cinematic" id="cinematicText">
+    The program is finished,<br>
+    but my love for you never ends. 💞
+</div>
+
+<div class="footer">
+    Powered by Raihan Nadir Widodo 💕
+</div>
+
+<script>
+function openLetter(){
+    document.getElementById("flap").style.transform="rotateX(180deg)";
+    document.getElementById("letter").style.display="block";
+}
+
+function cinematic(){
+    document.getElementById("cinematicText").classList.add("show");
+}
+</script>
+
+</body>
+</html>
